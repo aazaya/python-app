@@ -6,13 +6,13 @@ pipeline {
             steps {
                 echo 'Building Docker Image'
 		sh "whoami"
-		sh "docker build -t timilsinamadhav/python-app ."
+		sh "docker build -t aazaya666/python-app ."
             }
         }
         stage('Tag and Publish') {
             steps {
                 echo 'Pushing to dockerhub..'
-		sh "docker push timilsinamadhav/python-app"
+		sh "docker push aazaya666/python-app"
             }
         }
         stage('Deploy') {
@@ -23,7 +23,7 @@ pipeline {
 	stage('Cleanup') {
             steps {
                 echo 'Cleaning pushed images....'
-		sh "docker rmi timilsinamadhav/python-app"
+		sh "docker rmi aazaya666/python-app"
             }
         }
     }
